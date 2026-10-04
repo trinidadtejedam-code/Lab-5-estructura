@@ -6,3 +6,27 @@ Fri May  8 10:07:21 PM UTC 2026:
  tests:  0|6
 ========================================
 36e8bf5
+Sun Oct  4 10:50:58 PM UTC 2026: 
+ graph.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘createGraph’:
+graph.c:30:5: error: unknown type name ‘Graft’
+   30 |     Graft* grafo = (Grafh *)malloc(sizeof(Graph));
+      |     ^~~~~
+graph.c:30:21: error: ‘Grafh’ undeclared (first use in this function); did you mean ‘Graph’?
+   30 |     Graft* grafo = (Grafh *)malloc(sizeof(Graph));
+      |                     ^~~~~
+      |                     Graph
+graph.c:30:21: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:30:28: error: expected expression before ‘)’ token
+   30 |     Graft* grafo = (Grafh *)malloc(sizeof(Graph));
+      |                            ^
+graph.c:34:10: error: request for member ‘adjacencyMap’ in something not a structure or union
+   34 |     grafo->adjacencyMap = map_create(is_equal_string);
+      |          ^~
+graph.c:36:12: error: returning ‘int *’ from a function with incompatible return type ‘Graph *’ [-Wincompatible-pointer-types]
+   36 |     return grafo;
+      |            ^~~~~
+8fc1ca0

@@ -51,3 +51,14 @@ Sun Oct  4 11:08:38 PM UTC 2026:
  tests:  8|2
 ========================================
 dd9dfec
+Sun Oct  4 11:13:16 PM UTC 2026: 
+ graph.c | 16 +++++++++++++++-
+ 1 file changed, 15 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:97:32: error: ‘Edge’ has no member named ‘weigh’; did you mean ‘weight’?
+   97 |                 return arista->weigh;
+      |                                ^~~~~
+      |                                weight
+4b55571

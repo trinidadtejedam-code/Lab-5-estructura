@@ -84,7 +84,21 @@ List* getEdges(Graph* g, const char* label) {
 int getWeight(Graph* g, const char* label1, const char* label2) {
     if (!g || !label1 || !label2) return -1;
 
-    // Si no existe el origen o terminamos de iterar sin encontrar el destino
+    List* aristas = getEdges(g,label1);
+
+    if(aristas == NULL) return -1;
+
+    Edge* arista = (Edge*)list_first(aristas);
+
+    while(arista != NULL)
+        {
+            if(strcmp(arista->target,label2) == 0)
+            {
+                return arista->weigh;
+            }
+            arista = (Edge*)list_next(aristas);
+            
+        }
     return -1; 
 }
 

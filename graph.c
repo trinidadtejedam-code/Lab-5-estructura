@@ -106,8 +106,22 @@ int getWeight(Graph* g, const char* label1, const char* label2) {
 List* getAdjacentLabels(Graph* g, const char* label) {
     if (!g || !label) return NULL;
 
+    List* aristas = getEdges(g,label);
 
-    return NULL; 
+    if(aristas == NULL) return NULL;
+
+    List* etiquetas = list_create();
+
+    Edge* arista = (Edge*)list_first(aristas);
+
+    while(arista != NULL)
+        {
+            list_pushBack(etiquetas, arista->target);
+            arista = (Edge*)list_next(aristas);
+        }
+
+
+    return etiquetas; 
 }
 
 void destroyGraph(Graph* g) {
